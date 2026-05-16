@@ -105,7 +105,14 @@ async function fetchContributionsThisYear() {
   const html = await requestText(`https://github.com/users/${username}/contributions?from=${from}&to=${to}`, {
     Accept: 'text/html',
   });
-  const match = html.match(/([\d,]+) contributions?/i);
+
+  const summaryMatch = html.match(/id="js-contribution-activity-description"[^>]*>\s*<h2[^>]*>\s*([\d,]+) contributions? in \d{4}/i);
+
+  if (summaryMatch) {
+    return Number.parseInt(summaryMatch[1].replace(/,/g, ''), 10);
+  }
+
+  const match = html.match(/([\d,]+) contributions? in \d{4}/i);
 
   if (!match) {
     throw new Error(`Unable to parse contributions for ${currentYear}`);

@@ -23,12 +23,9 @@
 - **Merged pull requests accessible to token:** 42
 - **Contributions in 2026 shown on profile:** 2
 - **On GitHub since:** 2014
-- **Private stats mode:** enabled via repository secret; private repository names are not exposed.
 <!-- profile-stats:end -->
 
-<p align="center">
-  These numbers are generated from official GitHub data and refreshed automatically.
-</p>
+
 
 <p align="center">
   Thanks for stopping by — feel free to explore my repositories and connect.
