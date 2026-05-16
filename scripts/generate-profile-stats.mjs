@@ -106,7 +106,7 @@ async function fetchContributionsThisYear() {
     Accept: 'text/html',
   });
 
-  const summaryMatch = html.match(/id="js-contribution-activity-description"[^>]*>\s*<h2[^>]*>\s*([\d,]+) contributions? in \d{4}/i);
+  const summaryMatch = html.match(/<h2[^>]*id="js-contribution-activity-description"[^>]*>\s*([\d,]+)\s*contributions?\s*in\s*\d{4}\s*<\/h2>/i);
 
   if (summaryMatch) {
     return Number.parseInt(summaryMatch[1].replace(/,/g, ''), 10);
