@@ -11,7 +11,7 @@
   <a href="https://github.com/bransbury?tab=repositories"><img alt="Owned repos: 52" src="https://img.shields.io/badge/Owned%20repos-52-181717?style=for-the-badge&logo=github" /></a>
   <a href="https://github.com/bransbury?tab=repositories&sort=stargazers"><img alt="Stars: 7" src="https://img.shields.io/badge/Stars-7-181717?style=for-the-badge&logo=github" /></a>
   <a href="https://github.com/pulls?q=is%3Apr+author%3Abransbury+is%3Amerged"><img alt="Merged PRs: 42" src="https://img.shields.io/badge/Merged%20PRs-42-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/bransbury"><img alt="2026 contributions: 2" src="https://img.shields.io/badge/2026%20contributions-2-181717?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/bransbury"><img alt="2026 contributions: 186" src="https://img.shields.io/badge/2026%20contributions-186-181717?style=for-the-badge&logo=github" /></a>
   <a href="https://github.com/bransbury"><img alt="On GitHub since: 2014" src="https://img.shields.io/badge/On%20GitHub%20since-2014-181717?style=for-the-badge&logo=github" /></a>
 </p>
 
@@ -21,8 +21,9 @@
 - **Languages across owned repos:** TypeScript · JavaScript · SCSS · PowerShell · CSS
 - **Stars across owned repos:** 7
 - **Merged pull requests accessible to token:** 42
-- **Contributions in 2026 shown on profile:** 2
+- **Contributions in 2026 shown on profile:** 186
 - **On GitHub since:** 2014
+- **Private stats mode:** enabled via repository secret; private repository names are not exposed.
 <!-- profile-stats:end -->
 
 
