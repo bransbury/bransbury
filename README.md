@@ -1,33 +1,40 @@
-<h1 align="center">Hi, I'm Marcus 👋</h1>
+<h1>Hi, I'm Marcus 👋</h1>
 
-<p align="center">
-  Currently: Director of Engineering at <a href="https://github.com/sitecore">@Sitecore</a>. Building for the web for 25 years.
+<p>
+Building AI-assisted engineering workflows and enterprise-scale platforms.
 </p>
 
-<!-- profile-stats:start -->
-<p align="center">
-  <a href="https://github.com/bransbury?tab=followers"><img alt="Followers: 14" src="https://img.shields.io/badge/Followers-14-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/bransbury?tab=following"><img alt="Following: 59" src="https://img.shields.io/badge/Following-59-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/bransbury?tab=repositories"><img alt="Owned repos: 53" src="https://img.shields.io/badge/Owned%20repos-53-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/bransbury?tab=repositories&sort=stargazers"><img alt="Stars: 7" src="https://img.shields.io/badge/Stars-7-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/pulls?q=is%3Apr+author%3Abransbury+is%3Amerged"><img alt="Merged PRs: 46" src="https://img.shields.io/badge/Merged%20PRs-46-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/bransbury"><img alt="2026 contributions: 203" src="https://img.shields.io/badge/2026%20contributions-203-181717?style=for-the-badge&logo=github" /></a>
-  <a href="https://github.com/bransbury"><img alt="On GitHub since: 2014" src="https://img.shields.io/badge/On%20GitHub%20since-2014-181717?style=for-the-badge&logo=github" /></a>
+<p>
+  <a href="https://github.com/bransbury?tab=followers">
+    <img alt="Followers: 14" src="https://img.shields.io/badge/Followers-14-0969da?style=for-the-badge&logo=github" />
+  </a>
+  <a href="https://github.com/bransbury?tab=repositories">
+    <img alt="Public repos: 35" src="https://img.shields.io/badge/Public%20repos-35-8250df?style=for-the-badge&logo=github" />
+  </a>
+  <a href="https://github.com/bransbury">
+    <img alt="On GitHub since: 2014" src="https://img.shields.io/badge/GitHub%20since-2014-57606a?style=for-the-badge&logo=github" />
+  </a>
 </p>
 
-## 🚀 GitHub Snapshot
+---
 
-- **Most-starred repo:** [bransbury.github.io](https://github.com/bransbury/bransbury.github.io) (1 star)
-- **Languages across owned repos:** TypeScript · JavaScript · SCSS · PowerShell · CSS
-- **Stars across owned repos:** 7
-- **Merged pull requests accessible to token:** 46
-- **Contributions in 2026 shown on profile:** 203
-- **On GitHub since:** 2014
-- **Private stats mode:** enabled via repository secret; private repository names are not exposed.
-<!-- profile-stats:end -->
+## 🚀 Currently Working On
 
+- 🚀 [Speedboat](https://bransbury.github.io/Speedboat/) — lightweight engineering operating model
+- 🤖 [AI Engineering Starter Kit](https://github.com/bransbury/ai-engineering-starter-kit) — practical AI-assisted delivery workflows
+- 🧠 Enterprise AI orchestration patterns
+- ⚡ AI-powered CMS, personalization & decisioning systems
 
+---
 
-<p align="center">
-  Thanks for stopping by — feel free to explore my repositories and connect.
-</p>
+Director of Engineering at [@Sitecore](https://github.com/sitecore).
+
+Engineering leader focused on AI-native software delivery, enterprise personalization platforms, and scalable engineering operating models.
+
+Interested in how AI changes software engineering workflows, orchestration, specification discovery, validation loops, and developer productivity at scale.
+
+20 years in engineering across startups, scale-ups, and enterprise environments.
+
+---
+
+Connect/follow and let me know what you're working on.

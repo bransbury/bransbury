@@ -4,8 +4,13 @@ const username = process.env.GITHUB_USERNAME || process.argv[2] || 'bransbury';
 const readmePath = process.env.README_PATH || process.argv[3] || 'README.md';
 const profileStatsToken = process.env.PROFILE_STATS_TOKEN;
 const token = profileStatsToken || process.env.GITHUB_TOKEN;
-const includePrivateStats = process.env.INCLUDE_PRIVATE_STATS === 'true' && Boolean(profileStatsToken);
+const privateStatsRequested = process.env.INCLUDE_PRIVATE_STATS === 'true';
+const includePrivateStats = privateStatsRequested && Boolean(profileStatsToken);
 const currentYear = new Date().getUTCFullYear();
+
+if (privateStatsRequested && !profileStatsToken) {
+  throw new Error('INCLUDE_PRIVATE_STATS is true but PROFILE_STATS_TOKEN is not available. Check the repository secret name and workflow secret access.');
+}
 
 const headers = {
   'User-Agent': `${username}-profile-readme-updater`,
@@ -63,6 +68,16 @@ function badge(label, message, link, color = '181717') {
 
   return `  <a href="${link}"><img alt="${label}: ${message}" src="https://img.shields.io/badge/${labelText}-${messageText}-${color}?style=for-the-badge&logo=github" /></a>`;
 }
+
+const badgeColors = {
+  followers: '0969da',
+  following: '1f883d',
+  repos: '8250df',
+  stars: 'bf8700',
+  prs: 'bc4c00',
+  contributions: '1a7f37',
+  tenure: '57606a',
+};
 
 async function paginateRepos() {
   const repositories = [];
@@ -140,17 +155,14 @@ async function fetchLanguageTotals(repositories) {
 
 function buildStatsBlock(data) {
   const repoLabel = data.includesPrivateStats ? 'Owned repos' : 'Public repos';
-  const starsLabel = data.includesPrivateStats ? 'Stars across owned repos' : 'Public repo stars';
-  const mergedPrLabel = data.includesPrivateStats ? 'Merged pull requests accessible to token' : 'Merged pull requests';
-  const contributionsLabel = data.includesPrivateStats ? `Contributions in ${currentYear} shown on profile` : `Contributions in ${currentYear}`;
   const badges = [
-    badge('Followers', data.followers, `https://github.com/${username}?tab=followers`),
-    badge('Following', data.following, `https://github.com/${username}?tab=following`),
-    badge(repoLabel, data.repoCount, `https://github.com/${username}?tab=repositories`),
-    badge('Stars', data.totalStars, `https://github.com/${username}?tab=repositories&sort=stargazers`),
-    badge('Merged PRs', data.mergedPullRequests, `https://github.com/pulls?q=is%3Apr+author%3A${username}+is%3Amerged`),
-    badge(`${currentYear} contributions`, data.contributionsThisYear, `https://github.com/${username}`),
-    badge('On GitHub since', data.onGitHubSince, `https://github.com/${username}`),
+    badge('Followers', data.followers, `https://github.com/${username}?tab=followers`, badgeColors.followers),
+    badge('Following', data.following, `https://github.com/${username}?tab=following`, badgeColors.following),
+    badge(repoLabel, data.repoCount, `https://github.com/${username}?tab=repositories`, badgeColors.repos),
+    badge('Stars', data.totalStars, `https://github.com/${username}?tab=repositories&sort=stargazers`, badgeColors.stars),
+    badge('Merged PRs', data.mergedPullRequests, `https://github.com/pulls?q=is%3Apr+author%3A${username}+is%3Amerged`, badgeColors.prs),
+    badge(`${currentYear} contributions`, data.contributionsThisYear, `https://github.com/${username}`, badgeColors.contributions),
+    badge('On GitHub since', data.onGitHubSince, `https://github.com/${username}`, badgeColors.tenure),
   ];
 
   return [
@@ -163,10 +175,6 @@ function buildStatsBlock(data) {
     '',
     `- **Most-starred repo:** ${data.mostStarredRepo.label}`,
     `- **Languages across owned repos:** ${data.topLanguages.join(' · ')}`,
-    `- **${starsLabel}:** ${formatNumber(data.totalStars)}`,
-    `- **${mergedPrLabel}:** ${formatNumber(data.mergedPullRequests)}`,
-    `- **${contributionsLabel}:** ${formatNumber(data.contributionsThisYear)}`,
-    `- **On GitHub since:** ${data.onGitHubSince}`,
     data.includesPrivateStats
       ? '- **Private stats mode:** enabled via repository secret; private repository names are not exposed.'
       : '- **Private stats mode:** disabled; stats are based on public GitHub data only.',
