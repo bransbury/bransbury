@@ -27,7 +27,7 @@ Building AI-assisted engineering workflows and enterprise-scale platforms.
 
 ---
 
-Director of Engineering at [@Sitecore](https://github.com/sitecore).
+Director of Engineering at [Sitecore](https://github.com/sitecore).
 
 Engineering leader focused on AI-native software delivery, enterprise personalization platforms, and scalable engineering operating models.
 
