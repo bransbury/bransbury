@@ -1,4 +1,4 @@
-name: Update Profile Stats
+name: Update README Badges
 
 on:
   workflow_dispatch:
@@ -21,13 +21,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Update README stats
+      - name: Update README badges
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
           GITHUB_USERNAME: bransbury
-          INCLUDE_PRIVATE_STATS: 'true'
-        run: node scripts/generate-profile-stats.mjs
+        run: node scripts/update-readme-badges.mjs
 
       - name: Commit updated README
         run: |
@@ -35,5 +33,5 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add README.md
           git diff --cached --quiet && exit 0
-          git commit -m "chore: update profile stats"
+          git commit -m "chore: update readme badges"
           git push
